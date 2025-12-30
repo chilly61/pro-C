@@ -15,7 +15,8 @@ Despite this shared foundation, the three models differ significantly in how con
    $$
 \max \sum_{(w,c)\in D} \log P(c \mid w)
 $$
-   where 𝑤 is a target word, 𝑐 is a context word sampled within a fixed window, and the conditional probability is parameterized using a softmax over the dot product of word vectors. In practice, this objective is approximated using negative sampling, which replaces the expensive softmax with a contrastive loss that pushes observed word–context pairs closer together while pushing randomly sampled pairs apart.
+
+where 𝑤 is a target word, 𝑐 is a context word sampled within a fixed window, and the conditional probability is parameterized using a softmax over the dot product of word vectors. In practice, this objective is approximated using negative sampling, which replaces the expensive softmax with a contrastive loss that pushes observed word–context pairs closer together while pushing randomly sampled pairs apart.
 
 The theoretical implication is that Word2Vec learns embeddings that are shaped entirely by local context prediction. Any global corpus-level statistics emerge implicitly as a side effect of repeatedly solving this local prediction task. As a result, Word2Vec excels at capturing fine-grained semantic similarity but remains fundamentally dependent on word-level tokens and cannot represent unseen vocabulary.
    2.2 Glove
